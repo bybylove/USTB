@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询教师课表</title>
+</head>
+<body>
+<form action="" method="post">
+    输入教师姓名:<input type="text" name="name"><br>
+    <input type="submit" value="查询该教师课表">
+</form>
+
+<table class="table_con" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr style="background:#ddeeff;">
+                        <th width="15%" height="25px;" align="center" valign="middle" scope="col">课程名称</th>
+                        <th width="15%" height="25px;" align="center" valign="middle" scope="col">课程人数</th>
+                        <th width="15%" height="25px;" align="center" valign="middle" scope="col">所在教室</th>
+                        <th width="15%" height="25px;" align="center" valign="middle" scope="col">周次</th>
+                        <th width="15%" height="25px;" align="center" valign="middle" scope="col">课时数量</th>
+                        <th width="25%" height="25px;" align="center" valign="middle" style="border-right:0px;" scope="col">编辑</th>
+                      </tr>
+                    {% for time in all_time %}
+                      <tr class="t_con">
+                        <td align="center" valign="middle" scope="row">{{ time.lesson.name }}</td>
+                        <td align="center" valign="middle">{{ time.lesson.student_number }}</td>
+                        <td align="center" valign="middle">{{ time.classroom.name }}</td>
+                          <td align="center" valign="middle">
+
+                                  周{{ time.week }}第{{ time.time }}
+                          </td>
+                          <td align="center" valign="middle">{{ time.lesson.lesson_hour }}</td>
+                        <td align="center" valign="middle"  style="border-right:0px;">
+                            <form action="/course_scheduling/lesson_delete/" method="post">
+                               <p style="display: none"><input type="text" name="id" value="{{ time.lesson.id }}" /></p>
+                                <input type="submit" value="删除这条" />
+                            </form></td>
+                      </tr>
+                    {% endfor %}
+</table>
+</body>
+</html>

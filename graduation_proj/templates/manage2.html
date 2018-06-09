@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理毕业项目</title>
+</head>
+<body>
+{% if project.MiddleReport != None and project.TeacherOpinion == None  %}
+    <p style="color: red;">等待导师填写中期检查意见</p>
+{% endif %}
+学生信息:姓名:{{ project.Student.Name }}<br>
+    学院:{{ project.Student.College }}<br>
+毕业设计任务书: <br>
+标题: {{ project.AssignmentBook.Title }}<br>
+正文: {{ project.AssignmentBook.Content }}<br>
+选题报告: <br>
+标题: {{ project.SelectTopic.Title }}<br>
+正文: {{ project.SelectTopic.Content }}<br>
+中期报告: <br>
+标题: {{ project.MiddleReport.Title }}<br>
+正文: {{ project.MiddleReport.Content }}<br>
+导师评阅表: <br>
+
+    审核状态: {{ project.TeacherOpinion.TeacherName }} <br>
+    审核意见:{{ project.TeacherOpinion.Content }}<br>
+
+结题报告: <br>
+标题: {{ project.FinalReport.Title }}<br>
+正文: {{ project.FinalReport.Content }}<br>
+评审人意见表: <br>
+    <form action="judger_judge/" method="post">
+    审核状态: <input type="text" name="name" value="{{ project.JudgerOpinion.TeacherName }}"> <br>
+    审核意见:<input type="text" name="content" value="{{ project.JudgerOpinion.Content }}"><br>
+    <input type="text" name="project" value="{{ project.id }}" hidden="true">
+    {% if project.FinalReport != None and project.JudgerOpinion == None  %}
+        <input type="submit" value="提交评阅表">
+{% endif %}
+</form>
+{% if project.JudgerOpinion.TeacherName != 'pass' %}
+    项目未通过
+{% endif %}
+</body>
+</html>

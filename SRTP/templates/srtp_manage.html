@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=8">
+		<title>创新创业项目管理系统</title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
+<body>
+	<div class="mainbox">
+		<input id="sourse" value="0" type="hidden"/>
+		<input id="category" value="0" type="hidden"/>
+		<input id="teacol" value="0" type="hidden"/>
+		<div class="leftbox">
+			<div class="pamain">
+				<h1>
+					<span>项目基本信息</span>
+				</h1>
+				<div class="pwapper">
+					<div class="contant">
+						<table class="formtable">
+							<tr style="background-color: #c1d9f3;">
+								<td colspan="4"><span style="font-weight: bold;">项目基本信息</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-weight: bold">项目名称:</td>
+								<td>{{ srtp.name }}</td>
+								<td style="font-weight: bold">启动时间:</td>
+								<td>{{ srtp.start_time }}</td>
+							</tr>
+                            <tr>
+								<td style="font-weight: bold">参与队伍:</td>
+								<td>{{ srtp.team.name }}</td>
+								<td style="font-weight: bold">指导教师:</td>
+								<td>{{ srtp.teacher.name }}</td>
+							</tr>
+
+						</table>
+                        <form action="askmoney/" method="post">
+                                申请资金: <input type="text" name="askmoney" value="{{ srtp.money }}"><br>
+                                <input type="text" name="srtp" value="{{ srtp.id }}" hidden="true">
+                                <input type="submit" value="提交申请">
+                            </form>
+                        <form action="updatereport/" method="post">
+                                中期报告: <input type="text" name="middlereport_title" value="{{ srtp.middle_report.title }}" ><br><textarea name="middlereport"  cols="150" rows="70" value="{{ srtp.middle_report.content }}" >{{ srtp.middle_report.content }}</textarea><br>
+                                结题报告: <input type="text" name="finalreport_title" value="{{ srtp.final_report.title }}" ><br><textarea name="finalreport"  cols="150" rows="70" value="{{ srtp.final_report.content }}" >{{ srtp.final_report.content }}</textarea><br>
+                                <input type="text" name="srtp" value="{{ srtp.id }}" hidden="true">
+                                <input type="submit" value="提交报告">
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

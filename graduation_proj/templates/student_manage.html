@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理毕业项目</title>
+</head>
+<body>
+学生信息:姓名:{{ project.Student.Name }}<br>
+学院:{{ project.Student.College }}<br>
+指导教师:姓名:{{ project.Teacher.Name }} <br>
+学院:{{ project.Teacher.College }} <br>
+职称:{{ project.Teacher.Position }} <br><br><br>
+
+
+
+<form action="updateAssignmentBook/" method="post">
+    毕业设计任务书 <br>
+    标题: <input type="text" name="title" value="{{ project.AssignmentBook.Title }}" ><br>
+    正文: <br><textarea name="content"  cols="150" rows="70" value="{{ project.AssignmentBook.Content }}" >{{  project.AssignmentBook.Content }}</textarea><br>
+    <input type="text" name="project" value="{{ project.id }}" hidden="true">
+    {% if project.Teacher != None and project.AssignmentBook == None %}
+    <input type="submit" value="提交报告">
+    {% endif %}
+</form>
+<form action="updateSelectTopic/" method="post">
+    选题报告 <br>
+    标题: <input type="text" name="title" value="{{ project.SelectTopic.Title }}" ><br>
+    正文: <br><textarea name="content"  cols="150" rows="70" value="{{ project.SelectTopic.Content }}" >{{  project.SelectTopic.Content }}</textarea><br>
+    <input type="text" name="project" value="{{ project.id }}" hidden="true">
+    {% if project.AssignmentBook != None and project.SelectTopic == None %}
+    <input type="submit" value="提交报告">
+    {% endif %}
+</form>
+<form action="updateMiddleReport/" method="post">
+    中期报告 <br>
+    标题: <input type="text" name="title" value="{{ project.MiddleReport.Title }}" ><br>
+    正文: <br><textarea name="content"  cols="150" rows="70" value="{{ project.MiddleReport.Content }}" >{{  project.MiddleReport.Content }}</textarea><br>
+    <input type="text" name="project" value="{{ project.id }}" hidden="true">
+    {% if project.SelectTopic != None and project.MiddleReport == None %}
+    <input type="submit" value="提交报告">
+    {% endif %}
+</form>
+
+导师评阅表: <br>
+评阅状态:{{ project.TeacherOpinion.TeacherName }}<br>
+评阅意见: <br><textarea name="content"  cols="50" rows="20"  >{{  project.TeacherOpinion.Content }}</textarea><br>
+
+<form action="updateFinalReport/" method="post">
+    结题报告 <br>
+    标题: <input type="text" name="title" value="{{ project.FinalReport.Title }}" ><br>
+    正文: <br><textarea name="content"  cols="150" rows="70" value="{{ project.FinalReport.Content }}" >{{  project.FinalReport.Content }}</textarea><br>
+    <input type="text" name="project" value="{{ project.id }}" hidden="true">
+    {% if project.TeacherOpinion != None and project.FinalReport == None %}
+    <input type="submit" value="提交报告">
+    {% endif %}
+</form>
+
+
+评审人意见表: <br>
+评审状态: {{ project.JudgerOpinion.TeacherName }}<br>
+评审意见: <br><textarea name="content"  cols="50" rows="20"  >{{  project.JudgerOpinion.Content }}</textarea><br>
+
+
+
+{% if project.JudgerOpinion.TeacherName != 'pass' %}
+    项目未通过
+{% else%}
+    项目通过
+{% endif %}
+</body>
+</html>

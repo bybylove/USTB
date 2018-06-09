@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="form show.css" type="text/css" rel="stylesheet" />
+<script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var accordion_head = $('.left_menu_ul .li_nor a'),
+		accordion_body = $('.left_menu_ul .li_nor  .left_ul_con');
+		// 初始化展示第一个菜单
+		accordion_head.first().addClass('hover').next().slideDown('normal');
+		// 鼠标单击后显示层
+		accordion_head.on('click', function(event) {
+			// 关闭默认展开的第一个菜单
+			event.preventDefault();
+			// 给a加样式并显示关闭层
+			if ($(this).attr('class') != 'hover'){
+				accordion_body.slideUp('normal');
+				$(this).next().stop(true,true).slideToggle('normal');
+				accordion_head.removeClass('hover');
+				$(this).addClass('hover');
+			}
+		});
+	});
+</script>
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class="header">
+	<div class="logo"><a href="#"><img src="../images/logo_s.png"  height="30px" width="85px"/></a></div>
+    <div class="menu">
+    <ul>
+    <li><a href="#">我的学习</a></li>
+    <li><a href="#">我的培养</a></li>
+    <li><a href="#">我的成绩</a></li>
+    <li><a href="#">我的毕业</a></li>
+    </ul>
+    </div>
+    <div class="setting">
+    	<a href="#" class="personal_s"><i></i><span>个人设置</span></a>
+        <a href="#" class="exit"><i></i><span>退出</span></a>
+    </div>
+</div>
+<div class="contenter">
+	<div class="left_menu">
+    	<ul class="left_menu_ul">
+        	<li id="one" class="li_nor">
+            <a href="#" class="f_info_enter" title="信息录入"><b>信息录入</b></a>
+            <ul class="left_ul_con">
+                	<li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+            </ul>
+            </li>
+            <li id="two"  class="li_nor">
+            <a href="#" class="f_info_manage"  title="信息管理"><b>信息管理</b></a>
+            <ul class="left_ul_con">
+                	<li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+            </ul>
+            </li>
+            <li id="three"  class="li_nor">
+            <a href="#" class="f_user_manage" title="信息查询"><b>信息查询</b></a>
+            <ul class="left_ul_con">
+                	<li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+            </ul>
+            </li>
+            <li id="four"  class="li_nor">
+            <a href="#" class="f_system_manage" title="个人资料"><b>个人资料</b></a>
+            <ul class="left_ul_con">
+                	<li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+            </ul>
+            </li>
+            <li id="five" class="li_nor">
+            <a href="#" class="f_add_user" title="添加用户"><b>添加用户</b></a>
+             <ul class="left_ul_con">
+                	<li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+            </ul>
+            </li>
+            <li id="six" class="li_nor">
+            <a href="#" class="f_log_manage" title="日志管理"><b>日志管理</b></a>
+            <ul class="left_ul_con">
+                	<li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+                    <li><a href="#">班级信息录入</a></li>
+            </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+    	<div class="box">
+            <form action="#">
+            	<div class="l_words float_left">
+                <ul>
+                	<li>性别：</li>
+                    <li>生日：</li>
+                    <li>分组：</li>
+                    <li>移动电话：</li>
+                    <li>邮箱：</li>
+                    <li>QQ：</li>
+                    <li>家庭地址：</li>
+                </ul>
+                </div>
+            	<div class="r_words float_left">
+                	<ul>
+                	<li class="gender">
+                    	<div class="man float_left">
+                	    <input type="radio" name="RadioGroup1" value="单选" id="Radio_1" /><span>男性</span>
+                        </div>
+                        <div class="woman float_left">
+                	    <input type="radio" name="RadioGroup1" value="单选" id="Radio_1" /><span>女性</span>
+                        </div>
+                	</li>
+                    <li class="brithday">
+                    	<span><select name="">
+                    	  <option onchange=""> </option>
+                          <option>2001</option>
+                    	  <option>2000</option>
+                    	  <option>1999</option>
+                    	  <option>1998</option>
+                    	  <option>1997</option>
+                    	</select>
+                        年
+                       </span>
+                       <span><select name="">
+                    	  <option onchange=""> </option>
+                          <option>12</option>
+                    	  <option>1</option>
+                    	  <option>2</option>
+                    	  <option>3</option>
+                    	  <option>4</option>
+                    	</select>
+                        月
+                       </span>
+                       <span>
+                       <select name="">
+                       	  <option onchange=""> </option>
+                    	  <option>31</option>
+                    	  <option>30</option>
+                    	  <option>29</option>
+                    	  <option>28</option>
+                    	  <option>27</option>
+                    	</select>
+                        日
+                       </span>
+                    </li>
+                    <li class="relationship">
+                    <a href="#"><i class="float_left"></i></a><span class="float_left">同事</span>
+                    <a href="#" class="select"><i class="float_left"></i></a><span class="float_left">朋友</span>
+                    <a href="#"><i class="float_left"></i></a><span class="float_left">同学</span>
+                    </li>
+                    <li><input type="tel"  class="input_w"/><span style="color:orange; font-size:12px;">电话必须填写</span></li>
+                    <li><input type="email" class="input_w" /><span style="color:orange; font-size:12px;">邮箱必须填写</span></li>
+                    <li><input type="text" class="input_w" /></li>
+                    <li><input type="text" class="input_w" /></li>
+                    </ul>
+              </div>
+          </form>
+          <div class="enter_form clear">
+          <a href="#" class="e_save"></a>
+          <a href="#" class="e_back"></a>
+          
+          </div>
+        </div>
+        
+    </div>
+</div>
+<div class="footer">
+    版权所有：陈思展开黑洗澡足疗娱乐城 2012 All Right Reserved.
+</div>
+</body>
+</html>

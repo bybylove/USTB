@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=8">
+		<title>创新创业项目管理系统</title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
+<body>
+	<div class="mainbox">
+		<input id="sourse" value="0" type="hidden"/>
+		<input id="category" value="0" type="hidden"/>
+		<input id="teacol" value="0" type="hidden"/>
+		<div class="leftbox">
+			<div class="pamain">
+				<h1>
+					<span>项目基本信息</span>
+				</h1>
+				<div class="pwapper">
+					<div class="contant">
+						<table class="formtable">
+							<tr style="background-color: #c1d9f3;">
+								<td colspan="4"><span style="font-weight: bold;">项目基本信息</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-weight: bold">项目名称:</td>
+								<td>{{ srtp.name }}</td>
+								<td style="font-weight: bold">启动时间:</td>
+								<td>{{ srtp.start_time }}</td>
+							</tr>
+                            <tr>
+								<td style="font-weight: bold">参与队伍:</td>
+								<td>{{ srtp.team.name }}</td>
+								<td style="font-weight: bold">指导教师:</td>
+								<td>{{ srtp.teacher.name }}</td>
+							</tr>
+                            <tr>
+								<td style="font-weight: bold">申请资金:</td>
+								<td>{{ srtp.money }}</td>
+
+							</tr>
+						</table>
+                                中期报告: <label >{{ srtp.middle_report.title }}</label><br><textarea cols="150" rows="70" readonly="readonly">{{ srtp.middle_report.content }}</textarea><br>
+                                结题报告: <label >{{ srtp.final_report.title }}</label><br><textarea cols="150" rows="70" readonly="readonly">{{ srtp.final_report.content }}</textarea><br>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎</title>
+<link href="{%static "css/login.css"%}" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="loginer">
+	<div class="login_box">
+    	<div class="logo"><a href="#"><img src="{%static "images/logo.png"%}" /></a></div>
+        <div class="clear"></div>
+    	<div class="l_left">
+    		<img src="{%static "images/l_left_img.png"%}" height="319" width="360" />
+        </div>
+        <div class="l_right">
+        	<img src="{%static "images/user_login.png"%}" />
+            <div class="login_form" >
+            	<form action="/login/" method="post">
+                    <div class="l_input">{{ error }}</div>
+                    <div class="l_input"><span class="input_txt">用户名：</span><input class="input_area" type="text" name="username" /></div>
+                    <div class="l_input"><span class="input_txt">密码：</span><input class="input_area" type="password" name="password"/></div>
+                    <div class="l_input l_btn"><input class="input_btn input_m" type="submit" value="登录" /><input class="input_btn" type="reset" value="重置" /></div>
+                </form>
+        	</div>
+        </div>
+        <div class=" clear"></div>
+    	<div class="foot">
+        <p>陈思展开黑洗澡足疗娱乐城 版权所有 © 2018 All Right Reserved.
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

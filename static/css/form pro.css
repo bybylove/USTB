@@ -1,0 +1,309 @@
+@charset "utf-8";
+/*
+ *表单页面
+ *陈伟
+ *2012.08.06
+ */
+/* base stylesheet*/
+body{
+	font-size:12px;
+	font-family:Arial,sans-serif,"Micosoft Yahei";
+	line-height:1.8;
+}
+*{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style:none;
+}
+img{
+	border:0;
+}
+a {
+	text-decoration:none;
+	color:#069;
+}
+.clear{
+	clear:both;
+}
+.float_left{
+	float:left;
+}
+input{
+	color:#666;
+	background:#f0f0f0;
+	border:1px solid #cacaca;
+}
+/* this  login_in page  stylesheet */
+/*头部样式结束 通用*/
+.header{
+	height:55px;
+	background:#4298df;
+	width:100%;
+	overflow:hidden;
+}
+.header .logo{
+	float:left;
+	width:85px;
+	height:30px;
+	margin:1% 0 0 3%;
+}
+
+.header .menu{
+	float:left;
+	overflow:hidden;
+	margin:1.2% 0 0 3%;
+}
+.header .menu ul li{
+	float:left;
+	width:80px;
+}
+.header .menu ul li a{
+	color:#fff;
+	font-size:16px;
+	font-family:"Microsoft YaHei";
+}
+.header .setting{
+	float:right;
+	margin:1.2% 0% 0 0%;
+}
+.header .setting a{
+	color:#fff;
+	display:block;
+	width:80px;
+	height:18px;
+	line-height:18px;
+	float:left;
+}
+.header .setting a:hover{
+	text-decoration:underline;
+	cursor:pointer;
+}
+.header .setting a i{
+	width:17px;
+	height:17px;
+	display:block;
+	float:left;
+	margin-right:5px;
+}
+.header .setting a span{
+	float:left;
+}
+.header .setting a.personal_s i{
+	background:url(../images/login_in_icon.png) -2px -1px no-repeat;
+}
+.header .setting a.exit i{
+	background:url(../images/login_in_icon.png) -2px -23px no-repeat;
+}
+
+/*头部样式结束*/
+
+/*中间样式 部分通用*/
+.contenter{
+	overflow:hidden;
+	background:url(../images/left_menu_bg.jpg) repeat-y;
+	width:100%;
+}
+.contenter .left_menu{
+	width:156px;
+	min-height:600px;
+	float:left;
+	overflow:hidden;
+	_overflow:visible;
+	_height:auto !important;
+	_height:600px;
+}
+.contenter .left_menu a{
+	text-align:center;
+	padding:2px 0 3px 22px;
+}
+.contenter .left_menu .left_menu_ul{
+	padding:10px 0px;
+}
+.contenter .left_menu .left_menu_ul .left_ul_con{
+	padding-left:10px;
+	display:none;
+}
+.contenter .left_menu .left_menu_ul li.hover .left_ul_con{
+	display:block;
+}
+.contenter .left_menu ul li{
+	overflow:hidden;
+	margin-top:4px;
+	padding:0 10px;
+}
+.contenter .left_menu ul a.hover{
+	color:#036;
+}
+.contenter .left_menu .f_info_enter{
+	background:url(../images/from_show_icon.png) 0px 0px no-repeat;
+}
+.contenter .left_menu .f_info_manage{
+	background:url(../images/from_show_icon.png) 0px -25px no-repeat;
+}
+.contenter .left_menu .f_user_manage{
+	background:url(../images/from_show_icon.png) 0px -55px no-repeat;
+}
+.contenter .left_menu .f_system_manage{
+	background:url(../images/from_show_icon.png) 0px -85px no-repeat;
+}
+.contenter .left_menu .f_add_user{
+	background:url(../images/from_show_icon.png) 0px -115px no-repeat;
+}
+
+.contenter .left_menu .f_log_manage{
+	background:url(../images/from_show_icon.png) 0px -145px no-repeat;
+}
+.contenter .left_menu .left_ul_con a{
+	padding:0 0 0 20px;
+	background:url(../images/from_show_icon.png) 0 -166px no-repeat;
+}
+.contenter .main{
+	min-height:600px;
+	_overflow:visible;
+	_height:auto !important;
+	_height:600px;
+	overflow:hidden;
+}
+.contenter .main .form_pro{
+	padding:0px 20px 0 20px;
+}
+.contenter .main .form_pro .pro_con,
+.contenter .main .form_pro .top{
+	border-bottom:1px dashed #ccc;
+	overflow:hidden;
+	padding:20px 0;
+}
+.contenter .main .form_pro .pro_con{
+	background:#FAFAFA;
+	padding-left:15px;
+	display:none;
+}
+.contenter .main .form_pro .pro_con ul li,
+.contenter .main .form_pro .top ul li{
+	float:left;
+	height:25px;
+	line-height:25px;
+	margin-right:15px;
+}
+.contenter .main .form_pro .pro_con ul li input,
+.contenter .main .form_pro .top ul li input{
+	height:22px;
+	line-height:22px;
+}
+.contenter .main .form_pro .pro_con ul li input{
+	width:100px;
+}
+.contenter .main .form_pro .top ul li button{
+	background:url(../images/form_pro_icon.png) no-repeat -1px -1px;
+	cursor:pointer;
+	border:0;
+	height:23px;
+	width:87px;
+	color:#fff;
+}
+.contenter .main .form_pro .pro_inpuiry{
+	text-align:right;
+	padding:5px 0;
+}
+.contenter .main .form_pro .pro_inpuiry a{
+	display:inline-block;
+	width:70px;
+	position:relative;
+	padding:0 15px 0 5px;
+}
+.contenter .main .form_pro .pro_inpuiry i{
+	height:13px;
+	width:7px;
+	background:url(../images/form_pro_icon.png) no-repeat -5px -78px;
+	display:inline-block;
+	top:5px;
+	right:0;
+	position:absolute;
+}
+.contenter .main .form_pro .fix_i i{
+	background:url(../images/form_pro_icon.png) no-repeat -5px -92px;
+}
+
+
+.contenter .main .form_pro .table{
+	padding:10px 0 0 0;
+}
+.contenter .main .form_pro .table .t_head{
+	margin:5px 0;
+	overflow:hidden;
+}
+.contenter .main .form_pro .table .t_head ul li{
+	width:70px;
+	float:left;
+	margin-right:5px;
+	height:20px;
+}
+.contenter .main .form_pro .table .t_head ul li a{
+	margin-left:30px;
+	color:#fff;
+}
+.contenter .main .form_pro .table .t_head ul li.batch a{
+	margin-left:26px;
+}
+.contenter .main .form_pro .table .t_head ul li.copy{
+	background:url(../images/form_pro_icon.png) -1px -29px no-repeat;
+}
+.contenter .main .form_pro .table .t_head ul li.batch{
+	background:url(../images/form_pro_icon.png) -73px -29px no-repeat;
+	width:80px;
+}
+.contenter .main .form_pro .table .t_head ul li.expost{
+	background:url(../images/form_pro_icon.png) -155px -29px no-repeat;
+}
+.contenter .main .form_pro .table .t_head ul li.print{
+	background:url(../images/form_pro_icon.png) -228px -29px no-repeat;
+}
+.contenter .main .form_pro .table .t_con table{
+	border-top:1px solid #a4bcd6;
+	border-left:1px solid #a4bcd6;
+	border-right:1px solid #a4bcd6;
+	line-height:28px;
+	
+}
+.contenter .main .form_pro .table .t_con tr th{
+	border-bottom:1px solid #a4bcd6;
+	border-right:1px solid #d1d8dc; 
+}
+.contenter .main .form_pro .table .t_con tr td{
+	border-bottom:1px solid #a4bcd6;
+	border-right:1px solid #d1d8dc;
+}
+.contenter .main .form_pro .table .t_con input{
+	width:61px;
+	height:20px;
+	border:0;
+	cursor:pointer;
+}
+.contenter .main .form_pro .table .t_con input.t_edit{
+	background:url(../images/form_pro_icon.png) -2px -55px no-repeat;
+	margin-right:10px;
+}
+.contenter .main .form_pro .table .t_con input.t_del{
+	background:url(../images/form_pro_icon.png) -73px -55px no-repeat;
+}
+.contenter .main .form_pro .page_nav{
+	text-align:right;
+	margin:10px 0;
+}
+.contenter .main .form_pro .page_nav a,
+.contenter .main .form_pro .page_nav span{
+	margin-right:10px;
+}
+/*中间样式结束*/
+
+/*底部样式 通用*/
+.footer{
+	height:30px;
+	background:#4298df;
+	width:100%;
+	line-height:30px;
+	text-align:center;
+	color:white;
+}

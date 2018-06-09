@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{% static 'form pro.css' %}" type="text/css" rel="stylesheet" />
+<script src="{% static '/js/jquery-1.7.2.min.js' %}" type="text/javascript"></script>
+<title>修改密码</title>
+</head>
+<body>
+<div class="header">
+	<div class="logo"><a href="#"><img src={% static 'images/logo_s.png' %}  height="30px" width="85px"/></a></div>
+</div>
+<div class="contenter">
+    <div class="main">
+    	<div class="form_pro">
+        	<form action="" method="post">
+                    <div class="l_input"><span class="input_txt">原密码：</span><input class="input_area" type="text" name="oldpassword" /></div>
+                    <div class="l_input"><span class="input_txt">新密码：</span><input class="input_area" type="password" name="password"/></div>
+                    <div class="l_input"><span class="input_txt">再输一遍：</span><input class="input_area" type="password" name="password2"/></div>
+                    <div class="l_input l_btn"><input class="input_btn input_m" type="submit" value="确认修改" /></div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="footer">
+    版权所有：陈思展开黑洗澡足疗娱乐城 2012 All Right Reserved.
+</div>
+</body>
+</html>
